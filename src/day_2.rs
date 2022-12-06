@@ -36,13 +36,11 @@ impl Move {
     pub fn score_decided(self, opponent: Move) -> usize {
         match self {
             // X: Lose
-            Self::Rock => {
-                0 + match opponent {
-                    Self::Rock => 3,
-                    Self::Paper => 1,
-                    Self::Scissors => 2,
-                }
-            }
+            Self::Rock => match opponent {
+                Self::Rock => 3,
+                Self::Paper => 1,
+                Self::Scissors => 2,
+            },
             // Y: Draw
             Self::Paper => {
                 3 + match opponent {

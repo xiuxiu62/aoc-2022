@@ -30,7 +30,7 @@ fn top_calories(calories: &[u32]) -> u32 {
 fn top_3_calories(calories: &[u32]) -> u32 {
     let len = calories.len();
 
-    calories[len - 3..=len - 1].into_iter().sum()
+    calories[len - 3..=len - 1].iter().sum()
 }
 
 #[cfg(test)]
